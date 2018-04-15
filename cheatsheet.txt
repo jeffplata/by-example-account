@@ -1,0 +1,11 @@
+md projectfolder
+cd projectfolder
+
+pipenv install django
+pipenv shell
+
+# create project
+django-admin startproject myproject .
+
+#create django app
+python manage.py startapp myapp
