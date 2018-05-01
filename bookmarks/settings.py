@@ -33,12 +33,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account',
     'django.contrib.admin',
     
 ]
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'bookmarks.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Manila'
 
 USE_I18N = True
 
@@ -128,3 +128,11 @@ LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL
+EMAIL_HOST = 'smtp.gmail.com' 
+EMAIL_HOST_USER = 'your_account@gmail.com' 
+EMAIL_HOST_PASSWORD = 'your_password' 
+EMAIL_PORT = 587
+EMAIL_USE_TLS= True
+
+
