@@ -127,7 +127,7 @@ LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 #EMAIL
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_HOST_USER = 'your_account@gmail.com' 
@@ -136,3 +136,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS= True
 
 
+#EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
