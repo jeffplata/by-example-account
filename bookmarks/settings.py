@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 # from django.core.urlresolvers import reverse_lazy
 from django.urls import reverse_lazy
+from .settings_secret import *
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,8 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '36l#4-^5=#3@gvtz4_p&jb%_rwo&l8zj-(iusy@q^(3w1bi4_c'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -127,14 +128,5 @@ LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-#EMAIL
-EMAIL_HOST = 'smtp.gmail.com' 
-EMAIL_HOST_USER = 'your_account@gmail.com' 
-EMAIL_HOST_PASSWORD = 'your_password' 
-EMAIL_PORT = 587
-EMAIL_USE_TLS= True
-
-
-#EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
