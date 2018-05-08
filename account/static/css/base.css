@@ -7,7 +7,7 @@ body {
 }
 
 p {
-    line-height: 1.8;
+    line-height: 1.0;
 }
 
 a {
@@ -116,6 +116,7 @@ input[type=submit], a.button {
     padding:10px 20px;
     font-size:14px;
     text-transform:uppercase;
+    cursor:pointer;
 }
 .errorlist {
     color:#cc0033;
